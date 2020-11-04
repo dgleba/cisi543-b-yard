@@ -43,7 +43,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
 
-  config.secret_key =   ENV['devise.config.secret_key'],
+  config.secret_key =   ENV['devise.config.secret_key']
    
   # config.secret_key = '0561872103d1de61adc94506f1247ed3f7450483ef6880asfretfhnmj564345wafsfvbtui86ujtnbva3221SWXADb1e9bf1da3b233d4ecee-REVB'
 
