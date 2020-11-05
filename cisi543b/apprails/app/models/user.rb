@@ -13,8 +13,15 @@ class User < ActiveRecord::Base
 
   def to_s
     # show columns contents, not record object like: 	#<Vehicle:0x007f343b3f2890>	2016-06-08
-    "#{email},#{name}"
+    # "#{email}, #{name}, #{first_name}, #{last_name}"
+    "#{name}, #{first_name} #{last_name} - #{clocknum}, #{email}"
   end
+
+  # def name02
+  #   # show columns contents, not record object like: 	#<Vehicle:0x007f343b3f2890>	2016-06-08
+  #   # "#{email} - #{name}, #{first_name} #{last_name}"
+  #   "#{name} - #{first_name} #{last_name}, #{clocknum}, #{email}"
+  # end
 
   def fullnameclock
     # show columns contents, not record object like: 	#<Vehicle:0x007f343b3f2890>	2016-06-08

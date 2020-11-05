@@ -51,4 +51,40 @@ RailsAdmin.config do |config|
      history_index
      history_show
   end
+
+  
+# =================================================
+
+
+  config.model 'User' do
+    edit do
+      exclude_fields :versions
+      fields do
+        help false
+      end
+    end
+    list do
+      exclude_fields  :versions
+    end
+
+    #  http://stackoverflow.com/questions/11658281/rails-admin-display-name-instead-of-id   # 2017-05-16 kwruby 
+    # see the model for this item as well.
+    object_label_method do
+      :fullnameclock
+    end
+  end
+
+  config.model 'Cilist' do
+    edit do
+      exclude_fields :versions, :user, :sort_order, :active_status
+      fields do
+        help false
+      end
+    end
+    list do
+      exclude_fields  :versions, :sort_order, :active_status
+    end
+  end
+
+
 end
