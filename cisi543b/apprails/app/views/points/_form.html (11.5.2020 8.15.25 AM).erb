@@ -15,7 +15,7 @@
   <div class="form-group">
             <%= f.label :item_claimed, class: "col-sm-2 control-label" %>
         <div class="col-sm-10">
-        <%= f.text_field :item_claimed, class: "form-control" , required: true %>
+        <%= f.text_field :item_claimed, class: "form-control" %>
       </div>
         </div>
   <div class="form-group">
@@ -27,16 +27,27 @@
   <div class="form-group">
             <%= f.label :user_id, class: "col-sm-2 control-label" %>
         <div class="col-sm-10">
-          <%= f.collection_select :user_id, User.all, :id, :fullnameclock,  { prompt: true }, { :class => 'dgselect2' , required: 'true'}  %>
+          <%= f.collection_select :user_id, User.all, :id, :name,  { prompt: true }, { :class => 'dgselect2' }  %>
         </div>
     </div>
   <div class="form-group">
             <%= f.label :points_spent, class: "col-sm-2 control-label" %>
         <div class="col-sm-10">
-        <%= f.number_field :points_spent, class: "form-control", required: true  %>
+        <%= f.number_field :points_spent, class: "form-control" %>
       </div>
         </div>
-
+  <div class="form-group">
+            <%= f.label :sort_order, class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.number_field :sort_order, class: "form-control" %>
+      </div>
+        </div>
+  <div class="form-group">
+            <%= f.label :active_status, class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.number_field :active_status, class: "form-control" %>
+      </div>
+        </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

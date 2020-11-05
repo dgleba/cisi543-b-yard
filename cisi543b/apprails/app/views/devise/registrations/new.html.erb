@@ -20,14 +20,20 @@
     <hr>
 
     <%= f.input :first_name, :as => :string,
-                required: true,  autofocus: true
-                %>
+      hint: 'Your FIRST name as it appears in the HR system.',
+      required: true,  autofocus: true
+      %>
     <%= f.input :last_name, :as => :string,
-                required: true,  autofocus: true
-                %>
+      hint: 'Your LAST name as it appears in the HR system.',
+      required: true,  autofocus: true
+      %>
+    <%= f.input :name, :as => :string,
+      hint: 'The name you commonly go by.'
+            %>
     <%= f.input :clocknum, :as => :string,
-                required: true,  autofocus: true
-                %>
+      required: true,  autofocus: true
+      %>
+
     <hr>
 
 </div>

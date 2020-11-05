@@ -22,6 +22,7 @@ services:
         - RAKE_ENV=development
         - RAILS_ENV=development
     working_dir: /app
+    restart: unless-stopped
     volumes:
       - ./apprails:/app
       - bundle_cache:/usr/local/bundle/
@@ -70,6 +71,7 @@ services:
       - 16125:3306
     env_file:
       - .env
+    restart: unless-stopped
     volumes:
       # folder for mysql's internal data files.
       - mysqldata:/var/lib/mysql
