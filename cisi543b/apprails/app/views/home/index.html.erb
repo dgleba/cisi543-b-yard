@@ -1,8 +1,8 @@
 
 <p>This is the Stackpole Stratford CI Suggestion System.</p>
 
-<p>Click a button below or  
-    <%= link_to 'Sign up', new_user_registration_path, class: "btn", :style=>'color:#00000; background-color: #A0D6BE;' %> 
+<p>
+    <%#= link_to 'Sign up', new_user_registration_path, class: "btn", :style=>'color:#00000; background-color: #A0D6BE;' %> 
            
     <%#= link_to 'Sign in', new_user_session_path, class: "btn", :style=>'color:#00000; background-color: #A0D6BE' %>  </p>
 
@@ -17,6 +17,7 @@
 <br>
 <br>
 <br>
+<%= link_to 'Points redeemed', points_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
 <br>
 <br>
 
@@ -25,33 +26,9 @@
 
 
 <hr>
-<h3> 2.   </h3>
-<p>Stuff I will remove later..</p>
-<br>
-<br>
-<%= link_to 'Product_features join table', product_features_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
-<br>
-<br>
 
 <hr>
-<%= Rails.env %>
-
-<br><br>
-
-<hr>
-
-JWT
-<br>
-# The example below is how to make a curl HTTP request with the proper authentication headers.
-<br>
-# Be sure to actually use a working route and not "http://localhost:3001/products.json"
 <br>
 <br>
-
-<% if user_signed_in? %>
-  curl -i -X  GET --header 'Authorization: Bearer <%= JWTWrapper.encode({ user_id: current_user.id }) %>' 'http://localhost:3001/products.json'
-<% end %>
-
-<br><br>
-<hr>
+<br>
 

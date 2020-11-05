@@ -35,6 +35,9 @@ before_action :authenticate_user!
 
   # POST /cilists
   def create
+    
+    @cilist.user = current_user
+
     respond_to do |format|
       if @cilist.save
         format.html { redirect_to @cilist, notice: t('success_create') }

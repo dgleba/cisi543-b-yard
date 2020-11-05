@@ -37,11 +37,10 @@
     <tr>
       <th colspan="1"></th>
             <th>Item claimed</th>
-      <th>Comment</th>
+            <th>Points spent</th>
+ 
       <th>User</th>
-      <th>Points spent</th>
-      <th>Sort order</th>
-      <th>Active status</th>
+
     </tr>
   </thead>
 
@@ -57,11 +56,10 @@
         </td>
         
         <td><%= point.item_claimed %></td>
-        <td><%= point.comment %></td>
-        <td><%= point.user %></td>
         <td><%= point.points_spent %></td>
-        <td><%= point.sort_order %></td>
-        <td><%= point.active_status %></td>
+
+        <td><%= point.user %></td>
+
       </tr>
     <% end %>
   </tbody>

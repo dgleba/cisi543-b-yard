@@ -18,12 +18,7 @@
         <%= f.text_field :cell_or_location, class: "form-control" %>
       </div>
         </div>
-  <div class="form-group">
-            <%= f.label :waste_type_id, class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= f.collection_select :waste_type_id, WasteType.all, :id, :name,  { prompt: true }, { :class => 'dgselect2' }  %>
-        </div>
-    </div>
+
   <div class="form-group">
             <%= f.label :benefit_id, class: "col-sm-2 control-label" %>
         <div class="col-sm-10">
@@ -44,12 +39,7 @@
       </div>
         </div>
 
-    <div class="form-group">
-            <%= f.label :user_id, class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= f.collection_select :user_id, User.all, :id, :name,  { prompt: true }, { :class => 'dgselect2' }  %>
-        </div>
-    </div>
+
 
 
   <div class="form-group">

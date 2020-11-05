@@ -48,13 +48,18 @@ ActiveRecord::Schema.define(version: 5016_12_30_223320) do
     t.bigint "benefit_id"
     t.text "current_state"
     t.text "improvement_suggestion"
-    t.bigint "implementation_status_id"
-    t.bigint "feasibility_id"
+    t.bigint "implementation_status_id", default: 3
+    t.bigint "feasibility_id", default: 4
     t.bigint "user_id"
     t.integer "sort_order"
     t.integer "active_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "points_awarded"
+    t.string "responsible"
+    t.string "annual_savings"
+    t.string "cost_to_implement"
+    t.text "comment"
     t.index ["benefit_id"], name: "index_cilists_on_benefit_id"
     t.index ["feasibility_id"], name: "index_cilists_on_feasibility_id"
     t.index ["implementation_status_id"], name: "index_cilists_on_implementation_status_id"
