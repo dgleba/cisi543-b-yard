@@ -1,0 +1,24 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @feasibility.name %>
+</p>
+
+<p>
+  <strong>Sort order:</strong>
+  <%= @feasibility.sort_order %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @feasibility.active_status %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @feasibility.comment %>
+</p>
+
+<br>
+<%= link_to 'Edit', edit_feasibility_path(@feasibility), class: "btn btn-primary", :style=>'color:#FFFFFF;' %> &nbsp &nbsp
+<%= link_to 'Back', feasibilities_path, class: "btn btn-default" %>

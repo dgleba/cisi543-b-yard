@@ -6,8 +6,10 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_user)
 
+  
   # == Cancan ==
   config.authorize_with :cancan
+  config.parent_controller = 'ApplicationController' 
   
   config.total_columns_width = 9999999
 

@@ -1,0 +1,66 @@
+
+<row class="row is-table-row" >
+
+  <div class="col-sm-1 ">
+    <%= link_to 'Create', new_feasibility_path , class: "btn btn-success"%>
+  </div>
+
+  <div class="col-sm-2 ">
+    <h4>Listing Feasibilities</h4>
+  </div>
+
+  <div class="col-sm-3">
+    <%= search_form_for @q, class: 'search-form' do |f| %>
+      <div class="input-group">
+        <%= f.search_field :name_cont, class: 'form-control' %>
+        <span class="input-group-btn">
+          <button class="btn btn-primary">Search <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-4 ">
+    <%= paginate @feasibilities %>
+  </div>
+  
+  <div class="col-sm-2 ">
+    <%= page_entries_info @feasibilities, :entry_name => 'item' %>
+  </div>
+  
+</row>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+            <th>Name</th>
+      <th>Sort order</th>
+      <th>Active status</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feasibilities.each do |feasibility| %>
+      <tr>
+        <td>
+          <div class="btn-group">
+          <%= link_to 'Show', feasibility, class: "btn btn-info", :style=>'color:#FFFFFF;' %>
+          <%= link_to 'Edit', edit_feasibility_path(feasibility), class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
+          <% #commentedout  = link_to 'Destroy', feasibility, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning", :style=>'color:#FFFFFF;' %>
+          </div>
+        </td>
+        
+        <td><%= feasibility.name %></td>
+        <td><%= feasibility.sort_order %></td>
+        <td><%= feasibility.active_status %></td>
+        <td><%= feasibility.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

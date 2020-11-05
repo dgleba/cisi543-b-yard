@@ -1,0 +1,24 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @benefit.name %>
+</p>
+
+<p>
+  <strong>Sort order:</strong>
+  <%= @benefit.sort_order %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @benefit.active_status %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @benefit.comment %>
+</p>
+
+<br>
+<%= link_to 'Edit', edit_benefit_path(@benefit), class: "btn btn-primary", :style=>'color:#FFFFFF;' %> &nbsp &nbsp
+<%= link_to 'Back', benefits_path, class: "btn btn-default" %>

@@ -1,0 +1,24 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @waste_type.name %>
+</p>
+
+<p>
+  <strong>Sort order:</strong>
+  <%= @waste_type.sort_order %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @waste_type.active_status %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @waste_type.comment %>
+</p>
+
+<br>
+<%= link_to 'Edit', edit_waste_type_path(@waste_type), class: "btn btn-primary", :style=>'color:#FFFFFF;' %> &nbsp &nbsp
+<%= link_to 'Back', waste_types_path, class: "btn btn-default" %>

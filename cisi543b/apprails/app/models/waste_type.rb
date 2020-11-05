@@ -1,0 +1,2 @@
+class WasteType < ApplicationRecord
+end

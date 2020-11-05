@@ -1,0 +1,2 @@
+module FeasibilitiesHelper
+end

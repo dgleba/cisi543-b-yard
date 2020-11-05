@@ -1,0 +1,2 @@
+class ImplementationStatus < ApplicationRecord
+end

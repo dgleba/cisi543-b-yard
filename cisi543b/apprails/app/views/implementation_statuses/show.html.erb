@@ -1,0 +1,24 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @implementation_status.name %>
+</p>
+
+<p>
+  <strong>Sort order:</strong>
+  <%= @implementation_status.sort_order %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @implementation_status.active_status %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @implementation_status.comment %>
+</p>
+
+<br>
+<%= link_to 'Edit', edit_implementation_status_path(@implementation_status), class: "btn btn-primary", :style=>'color:#FFFFFF;' %> &nbsp &nbsp
+<%= link_to 'Back', implementation_statuses_path, class: "btn btn-default" %>

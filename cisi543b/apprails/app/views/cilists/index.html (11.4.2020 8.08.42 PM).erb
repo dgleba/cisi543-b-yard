@@ -1,0 +1,78 @@
+
+<row class="row is-table-row" >
+
+  <div class="col-sm-1 ">
+    <%= link_to 'Create', new_cilist_path , class: "btn btn-success"%>
+  </div>
+
+  <div class="col-sm-2 ">
+    <h4>Listing Cilists</h4>
+  </div>
+
+  <div class="col-sm-3">
+    <%= search_form_for @q, class: 'search-form' do |f| %>
+      <div class="input-group">
+        <%= f.search_field :cell_or_location_cont, class: 'form-control' %>
+        <span class="input-group-btn">
+          <button class="btn btn-primary">Search <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-4 ">
+    <%= paginate @cilists %>
+  </div>
+  
+  <div class="col-sm-2 ">
+    <%= page_entries_info @cilists, :entry_name => 'item' %>
+  </div>
+  
+</row>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+            <th>Cell or location</th>
+      <th>Waste type</th>
+      <th>Benefit</th>
+      <th>Current state</th>
+      <th>Improvement suggestion</th>
+      <th>Implementation status</th>
+      <th>Feasibility</th>
+      <th>User</th>
+      <th>Sort order</th>
+      <th>Active status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cilists.each do |cilist| %>
+      <tr>
+        <td>
+          <div class="btn-group">
+          <%= link_to 'Show', cilist, class: "btn btn-info", :style=>'color:#FFFFFF;' %>
+          <%= link_to 'Edit', edit_cilist_path(cilist), class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
+          <% #commentedout  = link_to 'Destroy', cilist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning", :style=>'color:#FFFFFF;' %>
+          </div>
+        </td>
+        
+        <td><%= cilist.cell_or_location %></td>
+        <td><%= cilist.waste_type %></td>
+        <td><%= cilist.benefit %></td>
+        <td><%= cilist.current_state %></td>
+        <td><%= cilist.improvement_suggestion %></td>
+        <td><%= cilist.implementation_status %></td>
+        <td><%= cilist.feasibility %></td>
+        <td><%= cilist.user %></td>
+        <td><%= cilist.sort_order %></td>
+        <td><%= cilist.active_status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

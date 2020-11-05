@@ -32,7 +32,7 @@ destroyscaffold2:
 # having trouble setting env variable, but do I need it?
 # to gain write access to code files created by the container.
 perm:
-	docker-compose exec  web	bash -c "chmod -R u+rw-s,g+rws,o+r  /app "
+	docker-compose exec  web	bash -c "chmod -R u+rw-s,g+rws,o+rw  /app "
 	# docker-compose exec dbm	bash -c "chmod -R u+rw-s,g+rws,o+rw  /mydat "
 
 asc:

@@ -1,0 +1,70 @@
+
+<row class="row is-table-row" >
+
+  <div class="col-sm-1 ">
+    <%= link_to 'Create', new_point_path , class: "btn btn-success"%>
+  </div>
+
+  <div class="col-sm-2 ">
+    <h4>Listing Points</h4>
+  </div>
+
+  <div class="col-sm-3">
+    <%= search_form_for @q, class: 'search-form' do |f| %>
+      <div class="input-group">
+        <%= f.search_field :item_claimed_cont, class: 'form-control' %>
+        <span class="input-group-btn">
+          <button class="btn btn-primary">Search <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-4 ">
+    <%= paginate @points %>
+  </div>
+  
+  <div class="col-sm-2 ">
+    <%= page_entries_info @points, :entry_name => 'item' %>
+  </div>
+  
+</row>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+            <th>Item claimed</th>
+      <th>Comment</th>
+      <th>User</th>
+      <th>Points spent</th>
+      <th>Sort order</th>
+      <th>Active status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @points.each do |point| %>
+      <tr>
+        <td>
+          <div class="btn-group">
+          <%= link_to 'Show', point, class: "btn btn-info", :style=>'color:#FFFFFF;' %>
+          <%= link_to 'Edit', edit_point_path(point), class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
+          <% #commentedout  = link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning", :style=>'color:#FFFFFF;' %>
+          </div>
+        </td>
+        
+        <td><%= point.item_claimed %></td>
+        <td><%= point.comment %></td>
+        <td><%= point.user %></td>
+        <td><%= point.points_spent %></td>
+        <td><%= point.sort_order %></td>
+        <td><%= point.active_status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

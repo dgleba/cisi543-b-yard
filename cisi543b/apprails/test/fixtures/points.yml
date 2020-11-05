@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_claimed: MyString
+  comment: MyText
+  user: one
+  points_spent: 1
+  sort_order: 1
+  active_status: 1
+
+two:
+  item_claimed: MyString
+  comment: MyText
+  user: two
+  points_spent: 1
+  sort_order: 1
+  active_status: 1

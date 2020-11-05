@@ -1,0 +1,2 @@
+class Feasibility < ApplicationRecord
+end

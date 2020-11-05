@@ -1,0 +1,2 @@
+module WasteTypesHelper
+end

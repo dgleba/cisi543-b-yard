@@ -1,30 +1,32 @@
-<% if user_signed_in? %> 
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>         
-<% else %> 
-  <%= link_to('Login', new_user_session_path)  %>
-<%end %>  
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 
-<h3> 1.   </h3>
-<%= link_to 'Products', products_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
+<p>This is the Stackpole Stratford CI Suggestion System.</p>
+
+<p>Click a button below or  
+    <%= link_to 'Sign up', new_user_registration_path, class: "btn", :style=>'color:#00000; background-color: #A0D6BE;' %> 
+           
+    <%#= link_to 'Sign in', new_user_session_path, class: "btn", :style=>'color:#00000; background-color: #A0D6BE' %>  </p>
+
+
+<br>
+
+<%= link_to 'Enter a new CI Suggestion', new_cilist_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
+<br>
+<br>
+
+<%= link_to 'See the CI suggestions you have submitted', cilists_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+<hr>
 <h3> 2.   </h3>
-
-<%# This is a comment! %>
-<%#  <%= link_to 'Rails admin', rails_admin.index_path('') %>
-
-Use /radmin to access the rails admin tool if it is setup.
-
-<h3> 3.   </h3>
-
-<%# this not working.. = link_to(:url =>"http://#{request.host}/pfeatures", :text => 'Pfeatures list') %>
-<%# = link_to(:url =>"http://localhost:3001/pfeatures", :text => "pfeatures list") %>
-
-<%= link_to 'Pfeatures', pfeatures_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
-<br>
-<br>
-<%= link_to 'Country of Origin list', country_of_origins_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
-<p>This has attachments</p>
+<p>Stuff I will remove later..</p>
 <br>
 <br>
 <%= link_to 'Product_features join table', product_features_path, class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
@@ -34,8 +36,8 @@ Use /radmin to access the rails admin tool if it is setup.
 <hr>
 <%= Rails.env %>
 
+<br><br>
 
-<br><br><br>
 <hr>
 
 JWT

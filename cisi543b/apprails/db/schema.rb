@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5016_12_30_223311) do
+ActiveRecord::Schema.define(version: 5016_12_30_223320) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -33,12 +33,59 @@ ActiveRecord::Schema.define(version: 5016_12_30_223311) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.integer "sort_order"
+    t.integer "active_status"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cilists", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "cell_or_location"
+    t.bigint "waste_type_id"
+    t.bigint "benefit_id"
+    t.text "current_state"
+    t.text "improvement_suggestion"
+    t.bigint "implementation_status_id"
+    t.bigint "feasibility_id"
+    t.bigint "user_id"
+    t.integer "sort_order"
+    t.integer "active_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["benefit_id"], name: "index_cilists_on_benefit_id"
+    t.index ["feasibility_id"], name: "index_cilists_on_feasibility_id"
+    t.index ["implementation_status_id"], name: "index_cilists_on_implementation_status_id"
+    t.index ["user_id"], name: "index_cilists_on_user_id"
+    t.index ["waste_type_id"], name: "index_cilists_on_waste_type_id"
+  end
+
   create_table "country_of_origins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
     t.string "ctype"
     t.datetime "fdate"
     t.integer "active_status"
     t.integer "sort_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feasibilities", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.integer "sort_order"
+    t.integer "active_status"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "implementation_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.integer "sort_order"
+    t.integer "active_status"
+    t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +97,18 @@ ActiveRecord::Schema.define(version: 5016_12_30_223311) do
     t.integer "sort_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "item_claimed"
+    t.text "comment"
+    t.bigint "user_id"
+    t.integer "points_spent"
+    t.integer "sort_order"
+    t.integer "active_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_points_on_user_id"
   end
 
   create_table "product_features", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -128,7 +187,22 @@ ActiveRecord::Schema.define(version: 5016_12_30_223311) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  create_table "waste_types", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.integer "sort_order"
+    t.integer "active_status"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cilists", "benefits"
+  add_foreign_key "cilists", "feasibilities"
+  add_foreign_key "cilists", "implementation_statuses"
+  add_foreign_key "cilists", "users"
+  add_foreign_key "cilists", "waste_types"
+  add_foreign_key "points", "users"
   add_foreign_key "product_features", "pfeatures"
   add_foreign_key "product_features", "products"
   add_foreign_key "products", "country_of_origins"

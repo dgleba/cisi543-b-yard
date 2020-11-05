@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
  
 
+  resources :cilists
+  resources :points
+  resources :implementation_statuses
+  resources :waste_types
+  resources :feasibilities
+  resources :benefits
   resources :product_features
 #
   resources :products do
