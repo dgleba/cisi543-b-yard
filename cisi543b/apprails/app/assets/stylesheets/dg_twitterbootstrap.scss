@@ -7,6 +7,12 @@
 //
 // usage: on top row of index page for example.. <row class="row is-table-row" >
 //
+
+// simpleform validation error message. color it to be more visible.
+.invalid-feedback {
+  background: #ffa2d8;
+  }
+
 @media only screen and (min-width : 768px) {
   .is-table-row {
     display: table;
@@ -23,6 +29,6 @@
   position: static;
 }
 .is-table-row [class*="col-"] {
-  background: #fff;
+  background: #ffffff;
 }
 

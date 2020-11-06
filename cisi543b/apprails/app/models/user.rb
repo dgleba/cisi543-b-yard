@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
          
   #validates :email, presence: true, uniqueness: true, email: true
   validates :email, presence: true, uniqueness: true 
-  
+  validates :first_name, :last_name, :clocknum, presence: true
 
   def to_s
     # show columns contents, not record object like: 	#<Vehicle:0x007f343b3f2890>	2016-06-08
