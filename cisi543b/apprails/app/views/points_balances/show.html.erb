@@ -1,0 +1,44 @@
+
+<p>
+  <strong>User:</strong>
+  <%= @points_balance.user_id %>
+</p>
+
+<p>
+  <strong>Clocknum:</strong>
+  <%= @points_balance.clocknum %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @points_balance.name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @points_balance.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @points_balance.last_name %>
+</p>
+
+<p>
+  <strong>Sum points awarded:</strong>
+  <%= @points_balance.sum_points_awarded %>
+</p>
+
+<p>
+  <strong>Sum points spent:</strong>
+  <%= @points_balance.sum_points_spent %>
+</p>
+
+<p>
+  <strong>Points balance:</strong>
+  <%= @points_balance.points_balance %>
+</p>
+
+<br>
+<%= link_to 'Edit', edit_points_balance_path(@points_balance), class: "btn btn-primary", :style=>'color:#FFFFFF;' %> &nbsp &nbsp
+<%= link_to 'Back', points_balances_path, class: "btn btn-default" %>

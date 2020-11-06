@@ -1,0 +1,74 @@
+
+<row class="row is-table-row" >
+
+
+
+  <div class="col-sm-2 ">
+    <h4>Listing Points Balances</h4>
+  </div>
+
+  <div class="col-sm-3">
+    <%= search_form_for @q, class: 'search-form' do |f| %>
+      <div class="input-group">
+      <%= f.search_field :name_or_last_name_or_first_name_or_clocknum_cont, class: 'form-control' %>
+        <span class="input-group-btn">
+          <button class="btn btn-primary">Search <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-4 ">
+    <%= paginate @points_balances %>
+  </div>
+  
+  <div class="col-sm-2 ">
+    <%= page_entries_info @points_balances, :entry_name => 'item' %>
+  </div>
+  
+</row>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+            <th>User</th>
+      <th>Clocknum</th>
+      <th>Name</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Sum points awarded</th>
+      <th>Sum points spent</th>
+      <th>Points balance</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @points_balances.each do |points_balance| %>
+      <tr>
+        <td>
+          <div class="btn-group">
+          <%= link_to 'Show', points_balance, class: "btn btn-info", :style=>'color:#FFFFFF;' %>
+          <% # = link_to 'Edit', edit_points_balance_path(points_balance), class: "btn btn-primary", :style=>'color:#FFFFFF;' %>
+          <% #commentedout  = link_to 'Destroy', points_balance, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning", :style=>'color:#FFFFFF;' %>
+          </div>
+        </td>
+        
+        <td><%= points_balance.user_id %></td>
+        <td><%= points_balance.clocknum %></td>
+        <td><%= points_balance.name %></td>
+        <td><%= points_balance.first_name %></td>
+        <td><%= points_balance.last_name %></td>
+        <td><%= points_balance.email %></td>
+        <td><%= points_balance.sum_points_awarded %></td>
+        <td><%= points_balance.sum_points_spent %></td>
+        <td><%= points_balance.points_balance %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

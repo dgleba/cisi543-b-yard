@@ -1,0 +1,2 @@
+module PointsBalancesHelper
+end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
 
+  resources :points_balances
   resources :cilists
   resources :points
   resources :implementation_statuses

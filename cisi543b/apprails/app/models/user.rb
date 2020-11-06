@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+  #  This isnt really helpful
+  # has_many :cilist
+
   has_paper_trail
   
   # Include default devise modules. Others available are:

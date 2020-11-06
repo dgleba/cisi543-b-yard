@@ -1,4 +1,78 @@
 
+
+=================================================
+cisi 543 ci system
+
+
+
+docker-compose  exec web rails generate scaffold Benefit \
+	name sort_order:integer  active_status:integer comment 
+		-f
+
+docker-compose  exec web rails generate scaffold feasibility \
+	name sort_order:integer  active_status:integer comment 
+		-f
+
+docker-compose  exec web rails generate scaffold WasteType \
+	name sort_order:integer  active_status:integer comment 
+		-f
+
+docker-compose  exec web rails generate scaffold ImplementationStatus  \
+	name sort_order:integer  active_status:integer comment 
+		-f
+
+
+docker-compose  exec web rails generate scaffold Point item_claimed comment:text \
+user:references points_spent:integer sort_order:integer  active_status:integer  
+ -f
+
+
+docker-compose  exec web rails generate scaffold Cilist  \
+ cell_or_location  waste_type:references benefit:references current_state:text improvement_suggestion:text \
+  implementation_status:references  feasibility:references user:references  \
+ sort_order:integer active_status:integer  
+ -f
+
+
+
+
+docker-compose  exec web rails generate scaffold PointsBalance  \
+      user_id:integer clocknum name first_name last_name sum_points_awarded:integer	\
+      sum_points_spent:integer points_balance:integer  \
+      --no-migration -f
+
+search:
+        <%= f.search_field :name_or_last_name_or_first_name_or_clocknum_cont, class: 'form-control' %>
+ 
+
+
+==
+
+backoffice migration..
+
+docker-compose  exec web rails g migration add_fields_to_cilist points_awarded:integer responsible annual_savings cost_to_implement comment:text
+
+
+
+==
+
+eg:
+rails g migration add_question_notefields_to_questions question_note:text question_whatlookfor:text question_if_no:text
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+docker-compose  -f docker-compose.yml  exec web rails destroy scaffold Point
+
+docker-compose  -f docker-compose.yml  exec web rails destroy scaffold Cilist
+
+
+
+
 =================================================
 
 
