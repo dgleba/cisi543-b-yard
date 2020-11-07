@@ -44,6 +44,7 @@
       <th>Feasibility</th>
       <th>Points Awarded</th>
       <th>User</th>
+      <th>Created</th>
 
     </tr>
   </thead>
@@ -68,6 +69,8 @@
         <td><%= cilist.feasibility %></td>
         <td><%= cilist.points_awarded %></td>
         <td><%= cilist.user %></td>
+        <td><%= cilist.created_at.strftime("%Y-%m-%d") if cilist.created_at.present? %></td>
+
 
       </tr>
     <% end %>

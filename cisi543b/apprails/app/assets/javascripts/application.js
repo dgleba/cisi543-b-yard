@@ -14,7 +14,11 @@
 //= require activestorage
 //= require jquery
 //= require jquery-ui/widgets/autocomplete
+//*= require autosize
 //= require autocomplete-rails
-//= require_tree .
+
 //= require bootstrap-sprockets
 //= require select2
+
+//= require_tree .
+

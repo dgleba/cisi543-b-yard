@@ -59,6 +59,7 @@
         <td><%= point.points_spent %></td>
 
         <td><%= point.user %></td>
+        <td><%= point.created_at.strftime("%Y-%m-%d") if point.created_at.present? %></td>
 
       </tr>
     <% end %>

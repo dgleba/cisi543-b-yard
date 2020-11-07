@@ -100,3 +100,7 @@ gem 'jquery-ui-rails'
 gem 'mini_magick'
 gem 'seed_dump'
 #gem 'bigdecimal', "1.4.1"
+
+# I just included the source as I could not get this to work.
+# gem 'autosize'
+# gem 'autosize', '~> 1.1', '<= 1.1.18.4'

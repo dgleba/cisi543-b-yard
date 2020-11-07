@@ -2,4 +2,5 @@
 $(function() {
   $(".dgselect2").select2({
    });	
+  //  autosize($('textarea'));
 });
