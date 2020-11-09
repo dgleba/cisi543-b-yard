@@ -8,9 +8,9 @@ rails 5.2.4.4
 _____________
 
 
-todo
 
-add more devise work flow like confirmable. lockable. etc.
+
+done.. add more devise work flow like confirmable. lockable. etc.
 
 _____________
 
