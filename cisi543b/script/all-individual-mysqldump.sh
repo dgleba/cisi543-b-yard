@@ -93,8 +93,15 @@ main1()
 
     # added timestamp to filename. 2020-08-11
 
+    # with timestamp
+    # $MYSQLDUMP --user=$MYSQL_USER -p$MYSQL_PASSWORD --databases "${db}" --add-drop-database --routines --events --flush-privileges --allow-keywords  \
+    #    | grep -v 'SQL SECURITY DEFINER' > "$BACKUP_DIR/t1/"${db}"_mysqldump_typ1.$(date +"%Y-%m-%d_%H.%M.%S").sql"
+
+    # without datetime stamp
     $MYSQLDUMP --user=$MYSQL_USER -p$MYSQL_PASSWORD --databases "${db}" --add-drop-database --routines --events --flush-privileges --allow-keywords  \
-       | grep -v 'SQL SECURITY DEFINER' > "$BACKUP_DIR/t1/"${db}"_mysqldump_typ1.$(date +"%Y-%m-%d_%H.%M.%S").sql"
+       | grep -v 'SQL SECURITY DEFINER' > "$BACKUP_DIR/t1/"${db}"_mysqldump_typ1.sql"
+
+    cp "$BACKUP_DIR/t1/"${db}"_mysqldump_typ1.sql" "$BACKUP_DIR/t1/"${db}"_mysqldump_typ1.$(date +"%Y-%m-%d_%H.%M.%S").sql"
 
     #echo t2
     #  $MYSQLDUMP --user=$MYSQL_USER -p$MYSQL_PASSWORD    --databases "${db}" --add-drop-database --routines --events --flush-privileges \
@@ -112,6 +119,11 @@ main1()
     $MYSQLDUMP --user=$MYSQL_USER -p$MYSQL_PASSWORD -d --databases "${db}"  \
         --add-drop-database  --routines --events --flush-privileges --complete-insert --allow-keywords \
         | grep -v 'SQL SECURITY DEFINER' > "$BACKUP_DIR/stru/"${db}"_struc_mysqldump.$(date +"%Y-%m-%d_%H.%M.%S").sql"
+    # without datetime stamp    
+
+    $MYSQLDUMP --user=$MYSQL_USER -p$MYSQL_PASSWORD -d --databases "${db}"  \
+        --add-drop-database  --routines --events --flush-privileges --complete-insert --allow-keywords \
+        | grep -v 'SQL SECURITY DEFINER' > "$BACKUP_DIR/stru/"${db}"_struc_mysqldump.sql"
   done
 
 }
