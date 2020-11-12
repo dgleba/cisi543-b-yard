@@ -47,7 +47,7 @@ devisfn:
 
 
 seeddump:
-	docker-compose  exec web rails db:seed:dump FILE=db/seeds/seeddump00.rb
+	docker-compose  exec web rails db:seed:dump FILE=db/seeddump00.rb
 
 
 #

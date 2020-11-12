@@ -56,6 +56,8 @@ RailsAdmin.config do |config|
 # =================================================
 
 
+  config.excluded_models= [Product, ProductFeature, CountryOfOrigin, Pfeature, WasteType, Feasibility]
+
   config.model 'User' do
     edit do
       exclude_fields :versions
@@ -76,15 +78,15 @@ RailsAdmin.config do |config|
 
   config.model 'Cilist' do
     edit do
-      exclude_fields :versions, :user, :sort_order, :active_status
+      exclude_fields :versions, :user, :sort_order, :active_status,  :feasibility 
       fields do
         help false
       end
     end
     list do
-      exclude_fields  :versions, :sort_order, :active_status
+      exclude_fields  :versions, :sort_order, :active_status,  :feasibility
     end
   end
-
+  # :feasibilities,
 
 end
