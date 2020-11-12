@@ -14,15 +14,15 @@ class Ability
     #
 
     elsif user.lr_regular?
-      can :read, [  Role,   WasteType, Benefit,  ]
+      can :read, [  Role,    Benefit,  ]
       # can [ :create, :update,  ], [ Product, ]
       can [ :read, :create, :update, ], [ Cilist ], user_id: user.id
       can [ :read,  ], [ Point, PointsBalance], user_id: user.id
       # can history
     
     elsif user.lr_supervisor?
-      can :read, [  Role, User,  WasteType, Benefit, Feasibility, ImplementationStatus, Point , PointsBalance]
-      can [ :create, :update,  ], [   WasteType, Benefit, Feasibility, ImplementationStatus, Point  ]
+      can :read, [  Role, User,  Benefit,  ImplementationStatus, Point , PointsBalance]
+      can [ :create, :update,  ], [    Benefit,  ImplementationStatus, Point  ]
       can [ :read, :create, :update, ], [ Cilist ]
       can [ :read,  :update, ], [ User ]
       # can history
@@ -34,10 +34,13 @@ class Ability
       can :history, :all
     
     elsif user.lr_readonly?
-      can :read, [  Role, CountryOfOrigin ]
+      can :read, [  Role,  ]
       can :dashboard, :all
     end
     
+    # Feasibility, WasteType,
+
+
   end
    
 end
