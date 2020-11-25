@@ -81,7 +81,6 @@ tar1() {
 
     tarf
 
-    cp -a /ap/cisi543-b-yard/data/mydat/t1/cisi_mysqldump_typ1.sql /ap/backups
 
 
 }
@@ -98,11 +97,21 @@ stripsecret(){
   # grep -v "^#"  $ssfile | grep '=' | sed  's/=.*/=xyzz/' > example-stripd$ssfile
 }
 
+
+
+# =================================================
+
+#Main entry...
+
 # dump the database
 cd /$bdir/$base/cisi543b
 make dump
 
 stripsecret
+
+# cp -a /ap/cisi543-b-yard/data/mydat/t1/cisi_mysqldump_typ1.sql /ap/backups
+mkdir -p /ap/cisi543-b-yard/backups
+cp -a /ap/cisi543-b-yard/data/mydat/t1/cisi_mysqldump_typ1.sql /ap/cisi543-b-yard/backups
 
 tar1
 
