@@ -33,6 +33,7 @@ devise.rb
 # x/
 sysdata/
 data/
+backups/
 
 
 # Environment files that may contain sensitive data

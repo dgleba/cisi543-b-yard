@@ -57,6 +57,11 @@ seeddump:
 prb:
 	docker-compose  -f docker-compose.prod.yml build
 
+
+prbi:
+	docker-compose  -f docker-compose.prod.yml run --rm prodweb bundle install
+
+
 prup:
 	docker-compose  -f docker-compose.prod.yml up
 
@@ -72,6 +77,12 @@ prdn:
 
 prst:
 	docker-compose  -f docker-compose.prod.yml stop
+
+prstng:
+	docker-compose  -f docker-compose.prod.yml stop nginx
+
+prupng:
+	docker-compose  -f docker-compose.prod.yml up nginx
 
 
 #
@@ -107,6 +118,10 @@ mgr21:
 asc9:
 	docker-compose -f docker-compose.prod.yml run app bundle exec rake assets:precompile 
 	
+nginxsh:
+	docker-compose  -f docker-compose.prod.yml exec nginx sh
+
+	
   
 
 # Database 
@@ -128,7 +143,9 @@ impall:
 	  	-p"$$MYSQL_ROOT_PASSWORD"  < /mydat/db_mysqldump-alldb-events.sql '
 
 
-
+impcisi:
+	  docker-compose  exec dbm /bin/bash -c 'exec mysql --local-infile=1 -uroot \
+	  	-p"$$MYSQL_ROOT_PASSWORD"  < /mydat/t1/cisi_mysqldump_typ1.sql'
 
 
 

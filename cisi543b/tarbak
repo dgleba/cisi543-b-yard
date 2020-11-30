@@ -76,6 +76,7 @@ tar1() {
       find /$bdir/$base -type f |grep cisi_struc_mysqldump.sql >> $tfile
       
       tar -czf $bkdir/$base-$HOSTNAME$fnpath$dts.tgz -T $tfile
+      tar -czf $bkdir/$base-$HOSTNAME$fnpath.tgz -T $tfile
     }
 
 
@@ -105,7 +106,12 @@ stripsecret(){
 
 # dump the database
 cd /$bdir/$base/cisi543b
-make dump
+
+# make dump
+# added COMPOSE_INTERACTIVE_NO_CLI=1 and -T .. docker-compose exec gives error... the input device is not a TTY
+COMPOSE_INTERACTIVE_NO_CLI=1
+docker-compose  exec -T dbm  /bin/bash /script/all-individual-mysqldump.sh
+
 
 stripsecret
 

@@ -62,8 +62,6 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (10.0.1.0)
       execjs
-    autosize (1.1.18.4)
-      jquery-rails
     bcrypt (3.1.16)
     bindex (0.8.1)
     boostrap-sass (0.0.2)
@@ -308,7 +306,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autosize (~> 1.1, <= 1.1.18.4)
   boostrap-sass
   bootsnap (>= 1.1.0)
   bootstrap-kaminari-views

@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./apprails:/app
-      - bundle_cache:/usr/local/bundle/
+      - ~/bundle_cache:/usr/local/bundle/
     # depends_on:
     # - db
     environment:
@@ -37,16 +37,6 @@ services:
       - VIRTUAL_PORT=3000
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
       - VIRTUAL_NETWORK=sister
-      # - VIRTUAL_HOST=couch-216-110-224-238.nip.io
-      # - LETSENCRYPT_HOST=couch-216-110-224-238.nip.io
-      #
-      # - VIRTUAL_HOST=cisi2.dg.ab3w.com
-      # - LETSENCRYPT_HOST=cisi2.dg.ab3w.com
-      #
-      # - VIRTUAL_HOST=ap-104-129-128-216.nip.io
-      # - LETSENCRYPT_HOST=ap-104-129-128-216.nip.io
-      # - VIRTUAL_HOST=ap-104-129-128-216.cloud-xip.io
-      # - LETSENCRYPT_HOST=ap-104-129-128-216.cloud-xip.io
       - VIRTUAL_HOST=ci.powderforward.com
       - LETSENCRYPT_HOST=ci.powderforward.com
     ports:
@@ -74,9 +64,11 @@ services:
     restart: unless-stopped
     volumes:
       # folder for mysql's internal data files.
-      - mysqldata:/var/lib/mysql
+      # 2020-11-24 change to local mount to keep data more dificult to erase by accident.
+      #- mysqldata:/var/lib/mysql
+      - ../sysdata/mysql_data:/var/lib/mysql/ 
       # - ../datasys/mysql${PWD}:/var/lib/mysql/  
-      # - ../sysdata/mysql_data:/var/lib/mysql/ 
+      #
       # init data scripts..
       - ./mysql-init/:/docker-entrypoint-initdb.d/
       # folder for scripts, etc.
@@ -220,8 +212,6 @@ services:
         max-size: "1m"
         max-file: "1"
 
-
 volumes:
-  bundle_cache:
   mysqldata:
   
