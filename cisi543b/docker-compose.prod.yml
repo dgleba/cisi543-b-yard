@@ -61,6 +61,6 @@ services:
     networks:
       - sister
     environment:
-      - VIRTUAL_HOST=cip.powderforward.com
-      - LETSENCRYPT_HOST=cip.powderforward.com      
+      - VIRTUAL_HOST=ci.powderforward.com
+      - LETSENCRYPT_HOST=ci.powderforward.com      
 
