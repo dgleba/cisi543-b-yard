@@ -125,5 +125,10 @@ Rails.application.configure do
    :enable_starttls_auto => true
   } 
 
+  #for devise.. 2016-07-22_Fri_14.52-PM David Gleba
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }  
+  # config.action_mailer.default_url_options = { host: 'https://cisi2.dg.ab3w.com' }  
+  config.action_mailer.default_url_options = { host: 'https://ci.powderforward.com/' }  
+
 
 end

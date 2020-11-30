@@ -37,8 +37,8 @@ services:
       - VIRTUAL_PORT=3000
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
       - VIRTUAL_NETWORK=sister
-      - VIRTUAL_HOST=ci.powderforward.com
-      - LETSENCRYPT_HOST=ci.powderforward.com
+      - VIRTUAL_HOST=cidev.powderforward.com
+      - LETSENCRYPT_HOST=cidev.powderforward.com
     ports:
       - 16123:3000
     networks:

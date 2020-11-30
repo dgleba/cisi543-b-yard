@@ -1,1 +1,0 @@
-$(function(){$("#product_pcolor").on("autocompletechange",function(o,e){console.log("Item is: ",$(this).val()),e.item||(this.value="",console.log("> Item selected is:",e.item))}),console.log("msg.. 1012")});

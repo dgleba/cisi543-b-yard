@@ -69,7 +69,7 @@ prd:
 	docker-compose  -f docker-compose.prod.yml up -d
 
 pasc:
-	docker-compose -f docker-compose.prod.yml run prodweb bundle exec rake assets:precompile
+	docker-compose -f docker-compose.prod.yml run --rm prodweb bundle exec rake assets:precompile
 
 prdn:
 	# leads to.. ERROR: for prod469_web_1  Cannot start service web: network dd5fb837f569e4aed574e9af8ded2914b359b0d2899aaeccf93857950bb15fd6 not found

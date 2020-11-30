@@ -1,1 +1,0 @@
-$(function(){$("#country_of_origin_ctype").on("autocompletechange",function(){console.log("Item is: ",$(this).val())}),console.log("msg.. 1015")});
