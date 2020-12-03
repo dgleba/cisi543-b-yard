@@ -84,6 +84,9 @@ prstng:
 prupng:
 	docker-compose  -f docker-compose.prod.yml up nginx
 
+prngsh:
+	docker-compose  -f docker-compose.prod.yml exec nginx sh
+
 
 #
 

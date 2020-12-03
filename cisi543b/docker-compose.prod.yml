@@ -55,8 +55,8 @@ services:
       - 6031:80
     restart: always
     volumes:
-      #  - ./docker/nginxmain.conf:/etc/nginx/nginx.conf
-      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginxall.conf:/etc/nginx/nginx.conf
+      # - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
       # - ./index.html:/usr/share/nginx/html/index.html
     networks:
       - sister
