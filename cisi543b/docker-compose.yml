@@ -197,8 +197,8 @@ services:
     expose:
       - "8083"
     volumes:
-      # - ./docker/nginx_h/nginxmain.conf:/etc/nginx/nginx.conf
-      # - ./docker/nginx_h/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/home-nginx/nginxmain.conf:/etc/nginx/nginx.conf
+      - ./docker/home-nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./homepage:/usr/share/nginx/html
     restart: always
     networks:
