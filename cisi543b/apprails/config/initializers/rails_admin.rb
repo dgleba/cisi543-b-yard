@@ -82,10 +82,14 @@ RailsAdmin.config do |config|
       fields do
         help false
       end
-    end
+    end  
     list do
+      include_fields :id, :current_state, :improvement_suggestion, :implementation_status, :responsible, 
+      :comment, :internal_note, :points_awarded, :cell_or_location, :note_to_originator, :user,
+      :created_at, :updated_at, :benefit
+      # field :current_state
       exclude_fields  :versions, :sort_order, :active_status,  :feasibility
-    end
+    end  
   end
   # :feasibilities,
 

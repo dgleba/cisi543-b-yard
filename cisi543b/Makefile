@@ -36,6 +36,8 @@ perm:
 	# docker-compose exec dbm	bash -c "chmod -R u+rw-s,g+rws,o+rw  /mydat "
 
 asc:
+	# https://stackoverflow.com/questions/25422181/custom-javascript-rails-admin 2021-02-20
+	docker-compose  run --rm web bundle exec rake tmp:clear
 	docker-compose  run --rm web bundle exec rake assets:precompile
 
 

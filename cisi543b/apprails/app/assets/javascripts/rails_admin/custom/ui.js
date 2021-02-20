@@ -1,5 +1,13 @@
+//=require_tree .
 //= require rails_admin/themes/material/ui.js
+
 $(document).on('rails_admin.dom_ready', function(){
+
+    // from a jQuery collection 2021-02-20_Sat_10.16-AM 
+    // https://stackoverflow.com/questions/25422181/custom-javascript-rails-admin
+    autosize($('textarea'));
+
+
   var $table = $('#bulk_form').find('table');
   var table = $table[0];
 
