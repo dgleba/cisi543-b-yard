@@ -51,8 +51,8 @@ services:
 
   nginx:
     image: nginx:1.14-alpine
-    ports:
-      - 6031:80
+    # ports:
+    #   - 6031:80
     restart: always
     volumes:
       - ./docker/prodweb-nginx/nginxall.conf:/etc/nginx/nginx.conf
