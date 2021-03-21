@@ -43,6 +43,7 @@
       <th>Implementation status</th>
      
       <th>Points Awarded</th>
+      <th>Contact</th>
       <th>Note to Originator</th>
       <th>User</th>
       <th>Created</th>
@@ -69,6 +70,7 @@
         <td><%= cilist.implementation_status %></td>
         
         <td><%= cilist.points_awarded %></td>
+        <td><%= cilist.responsible %></td>
         <td><%= cilist.note_to_originator %></td>
         <td><%= cilist.user %></td>
         <td><%= cilist.created_at.strftime("%Y-%m-%d") if cilist.created_at.present? %></td>
