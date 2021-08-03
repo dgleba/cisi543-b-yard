@@ -57,8 +57,6 @@ services:
 
   dbm:
     image: mysql:5.7
-    # ports: 
-    #   - 16125:3306
     env_file:
       - .env
     restart: unless-stopped
@@ -87,6 +85,16 @@ services:
       timeout: 20s
       retries: 3
       start_period: 60s
+    ports:
+      - 26126:3306
+    # ports: 
+    #   - 16125:3306
+      # environment:
+    #   - VIRTUAL_PORT=3306
+    #   - LETSENCRYPT_EMAIL=dgleba@stackpole.com
+    #   - VIRTUAL_NETWORK=sister    
+    #   - VIRTUAL_HOST=dbm.powderforward.com
+    #   - LETSENCRYPT_HOST=dbm.powderforward.com
     networks:
       - net543b
 
