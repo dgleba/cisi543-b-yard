@@ -64,8 +64,14 @@ prbi:
 	docker-compose  -f docker-compose.prod.yml run --rm prodweb bundle install
 
 
+# to restart the app to get new code changes, `make prst` then `make prup`
 prup:
+	#start the production app
 	docker-compose  -f docker-compose.prod.yml up
+
+prst:
+	# stop the production app.
+	docker-compose  -f docker-compose.prod.yml stop
 
 prd:
 	docker-compose  -f docker-compose.prod.yml up -d
@@ -77,8 +83,6 @@ prdn:
 	# leads to.. ERROR: for prod469_web_1  Cannot start service web: network dd5fb837f569e4aed574e9af8ded2914b359b0d2899aaeccf93857950bb15fd6 not found
 	docker-compose  -f docker-compose.prod.yml down
 
-prst:
-	docker-compose  -f docker-compose.prod.yml stop
 
 prstng:
 	docker-compose  -f docker-compose.prod.yml stop nginx

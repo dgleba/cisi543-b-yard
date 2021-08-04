@@ -78,7 +78,20 @@ RailsAdmin.config do |config|
 
   config.model 'Cilist' do
     edit do
-      exclude_fields :versions, :user, :sort_order, :active_status,  :feasibility 
+      field :cell_or_location
+      field :benefit
+      field :current_state
+      field :improvement_suggestion 
+      field :implementation_status
+      field :points_awarded
+      field :responsible
+      field :note_to_originator
+      field :internal_note
+      field :comment
+      field :annual_savings 
+      field :cost_to_implement
+      field :user
+      # exclude_fields :versions,  :sort_order, :active_status,  :feasibility 
       fields do
         help false
       end
@@ -89,6 +102,7 @@ RailsAdmin.config do |config|
       :created_at, :updated_at, :benefit
       # field :current_state
       exclude_fields  :versions, :sort_order, :active_status,  :feasibility
+      field :id
     end  
   end
   # :feasibilities,
